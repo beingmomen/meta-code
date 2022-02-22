@@ -15,16 +15,71 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
+      // {
+      //   body: true,
+      //   src: "/bootstrap.js",
+      // },
+      // {
+      //   body: true,
+      //   src: "~/assets/app-assets/vendors/js/vendors.min.js",
+      // },
+      // {
+      //   body: true,
+      //   src: "~/assets/app-assets/vendors/js/charts/apexcharts.min.js",
+      // },
+      // {
+      //   body: true,
+      //   src: "~/assets/app-assets/vendors/js/extensions/toastr.min.js",
+      // },
+      // {
+      //   body: true,
+      //   src: "~/assets/app-assets/js/core/app-menu.js",
+      // },
+      // {
+      //   body: true,
+      //   src: "~/assets/app-assets/js/core/app.js",
+      // },
+      // {
+      //   body: true,
+      //   src: "~/assets/app-assets/js/scripts/pages/dashboard-ecommerce.js",
+      // },
       {
         body: true,
-        src: "/bootstrap.js",
-      }
+        src: "~plugins/js/ui-feather.js",
+      },
     ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    "@/assets/css/bootstrap.min.css"
+    "@assets/css/bootstrap.min.css",
+    // BEGIN: Vendor CSS
+    "@assets/app-assets/vendors/css/vendors.min.css",
+    "@assets/app-assets/vendors/css/charts/apexcharts.css",
+    "@assets/app-assets/vendors/css/extensions/toastr.min.css",
+    // END: Vendor CSS
+
+    // BEGIN: Theme CSS
+    "@assets/app-assets/css/bootstrap.css",
+    "@assets/app-assets/css/bootstrap-extended.css",
+    "@assets/app-assets/css/colors.css",
+    "@assets/app-assets/css/themes/dark-layout.css",
+    "@assets/app-assets/css/components.css",
+    "@assets/app-assets/css/themes/semi-dark-layout.css",
+    "@assets/app-assets/css/themes/bordered-layout.css",
+    // END: Theme CSS
+
+    // BEGIN: Page CSS
+    "@assets/app-assets/css/core/menu/menu-types/vertical-menu.css",
+    "@assets/app-assets/css/pages/dashboard-ecommerce.css",
+    "@assets/app-assets/css/pages/ui-feather.css",
+    "@assets/app-assets/css/plugins/charts/chart-apex.css",
+    "@assets/app-assets/css/plugins/extensions/ext-component-toastr.css",
+    // END: Page CSS
+
+    // BEGIN: Custom CSS
+    "@/assets/assets/css/style.css",
+    // END: Custom CSS
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
