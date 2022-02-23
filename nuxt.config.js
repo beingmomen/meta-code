@@ -15,17 +15,43 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
+      {
+        body: true,
+        src: "https://code.jquery.com/jquery-3.6.0.min.js",
+      },
+      // {
+      //   body: true,
+      //   src: "https://beingmomen.github.io/cdn/js/jquery.js",
+      // },
+      {
+        body: true,
+        src: "https://beingmomen.github.io/cdn/js/ui-feather.js",
+      },
+      // {
+      //   body: true,
+      //   src: "https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js",
+      // },
+      // {
+      //   body: true,
+      //   src: "https://cdn.jsdelivr.net/npm/apexcharts",
+      // },
+      // {
+      //   type: 'text/javascript',
+      //   src: "/js/jquery.js",
+      //   body: true,
+      // },
       // {
       //   body: true,
       //   src: "/bootstrap.js",
       // },
       // {
+      //   type: 'text/javascript',
+      //   src: "/js/ui-feather.js",
       //   body: true,
-      //   src: "~/assets/app-assets/vendors/js/vendors.min.js",
       // },
       // {
       //   body: true,
-      //   src: "~/assets/app-assets/vendors/js/charts/apexcharts.min.js",
+      //   src: "~assets/app-assets/vendors/js/charts/apexcharts.min.js",
       // },
       // {
       //   body: true,
@@ -43,10 +69,10 @@ export default {
       //   body: true,
       //   src: "~/assets/app-assets/js/scripts/pages/dashboard-ecommerce.js",
       // },
-      {
-        body: true,
-        src: "~plugins/js/ui-feather.js",
-      },
+      // {
+      //   body: true,
+      //   src: "@/assets/js/ui-feather.js",
+      // },
     ],
   },
 
@@ -85,6 +111,12 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     "~plugins/mixins/test.js",
+    // { src: "~plugins/jquery.js", mode: "client" },
+    // { src: "~plugins/feather-file.js", mode: "client" },
+    { src: "~plugins/feather.js", mode: "client" },
+    // { src: "~plugins/jquery.js", mode: "client" },
+    // { src: "~plugins/ui-feather.js", mode: "client" },
+    // "~plugins/jquery.js",
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
