@@ -27,6 +27,10 @@ export default {
         body: true,
         src: "https://cdn.jsdelivr.net/npm/apexcharts",
       },
+      {
+        body: true,
+        src: "/js/bootstrap.min.js",
+      },
       // {
       //   body: true,
       //   src: "https://beingmomen.github.io/cdn/js/ui-feather.js",
@@ -52,10 +56,6 @@ export default {
       // {
       //   body: true,
       //   src: "~assets/app-assets/vendors/js/charts/apexcharts.min.js",
-      // },
-      // {
-      //   body: true,
-      //   src: "~/assets/app-assets/vendors/js/extensions/toastr.min.js",
       // },
       // {
       //   body: true,

@@ -11,7 +11,7 @@
             <div class="card mb-0">
               <div class="card-body">
                 <nuxt-link to="" class="brand-logo">
-                  <img src="/at.svg" alt="logo" />
+                  <!-- <img src="/at.svg" alt="logo" /> -->
                   <img src="/images/code.svg" alt="logo" />
                   <h2 class="brand-text text-primary ml-1">META CODE</h2>
                 </nuxt-link>
@@ -39,9 +39,9 @@
                   <div class="form-group">
                     <div class="d-flex justify-content-between">
                       <label for="login-password">Password</label>
-                      <a href="page-auth-forgot-password-v1.html">
+                      <nuxt-link to="">
                         <small>Forgot Password?</small>
-                      </a>
+                      </nuxt-link>
                     </div>
                     <div
                       class="input-group input-group-merge form-password-toggle"
@@ -56,9 +56,9 @@
                         aria-describedby="login-password"
                       />
                       <div class="input-group-append">
-                        <span class="input-group-text cursor-pointer"
-                          ><i data-feather="eye"></i
-                        ></span>
+                        <span class="input-group-text cursor-pointer">
+                          <eye-icon size="1.5x" class="custom-class"></eye-icon>
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -79,32 +79,6 @@
                     Sign in
                   </button>
                 </form>
-
-                <p class="text-center mt-2">
-                  <span>New on our platform?</span>
-                  <a href="page-auth-register-v1.html">
-                    <span>Create an account</span>
-                  </a>
-                </p>
-
-                <div class="divider my-2">
-                  <div class="divider-text">or</div>
-                </div>
-
-                <div class="auth-footer-btn d-flex justify-content-center">
-                  <a href="javascript:void(0)" class="btn btn-facebook">
-                    <i data-feather="facebook"></i>
-                  </a>
-                  <a href="javascript:void(0)" class="btn btn-twitter white">
-                    <i data-feather="twitter"></i>
-                  </a>
-                  <a href="javascript:void(0)" class="btn btn-google">
-                    <i data-feather="mail"></i>
-                  </a>
-                  <a href="javascript:void(0)" class="btn btn-github">
-                    <i data-feather="github"></i>
-                  </a>
-                </div>
               </div>
             </div>
             <!-- /Login v1 -->
@@ -116,9 +90,14 @@
 </template>
 
 <script>
+import { EyeIcon } from "vue-feather-icons";
+
 export default {
   name: "login",
   layout: "auth",
+  components: {
+    EyeIcon,
+  },
 };
 </script>
 

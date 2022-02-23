@@ -94,11 +94,8 @@
             >
           </div>
         </li>
-          <!-- v-if="isDark" -->
-        <li
-          @click="ToggleSiteMode"
-          class="nav-item d-none d-lg-block"
-        >
+        <!-- v-if="isDark" -->
+        <li @click="ToggleSiteMode" class="nav-item d-none d-lg-block">
           <nuxt-link to="" class="nav-link nav-link-style">
             <moon-icon size="4x" class="custom-class"></moon-icon>
           </nuxt-link>
