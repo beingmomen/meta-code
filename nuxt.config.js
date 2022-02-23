@@ -19,21 +19,21 @@ export default {
         body: true,
         src: "https://code.jquery.com/jquery-3.6.0.min.js",
       },
-      // {
-      //   body: true,
-      //   src: "https://beingmomen.github.io/cdn/js/jquery.js",
-      // },
       {
         body: true,
-        src: "https://beingmomen.github.io/cdn/js/ui-feather.js",
+        src: "https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js",
+      },
+      {
+        body: true,
+        src: "https://cdn.jsdelivr.net/npm/apexcharts",
       },
       // {
       //   body: true,
-      //   src: "https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js",
+      //   src: "https://beingmomen.github.io/cdn/js/ui-feather.js",
       // },
       // {
       //   body: true,
-      //   src: "https://cdn.jsdelivr.net/npm/apexcharts",
+      //   src: "https://beingmomen.github.io/cdn/js/jquery.js",
       // },
       // {
       //   type: 'text/javascript',
@@ -78,30 +78,43 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    "@assets/css/bootstrap.min.css",
+    "@/assets/assets/css/bootstrap.min.css",
+
+
     // BEGIN: Vendor CSS
-    "@assets/app-assets/vendors/css/vendors.min.css",
-    "@assets/app-assets/vendors/css/charts/apexcharts.css",
-    "@assets/app-assets/vendors/css/extensions/toastr.min.css",
+    "@/assets/app-assets/vendors/css/vendors.min.css",
+    "@/assets/app-assets/vendors/css/charts/apexcharts.css",
+    "@/assets/app-assets/vendors/css/extensions/toastr.min.css",
+    "@/assets/app-assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css",
+    "@/assets/app-assets/vendors/css/tables/datatable/responsive.bootstrap4.min.css",
+    "@/assets/app-assets/vendors/css/tables/datatable/buttons.bootstrap4.min.css",
+    "@/assets/app-assets/vendors/css/tables/datatable/rowGroup.bootstrap4.min.css",
+    "@/assets/app-assets/vendors/css/pickers/flatpickr/flatpickr.min.css",
     // END: Vendor CSS
 
+
+
     // BEGIN: Theme CSS
-    "@assets/app-assets/css/bootstrap.css",
-    "@assets/app-assets/css/bootstrap-extended.css",
-    "@assets/app-assets/css/colors.css",
-    "@assets/app-assets/css/themes/dark-layout.css",
-    "@assets/app-assets/css/components.css",
-    "@assets/app-assets/css/themes/semi-dark-layout.css",
-    "@assets/app-assets/css/themes/bordered-layout.css",
+    "@/assets/app-assets/css/bootstrap.css",
+    "@/assets/app-assets/css/bootstrap-extended.css",
+    "@/assets/app-assets/css/themes/dark-layout.css",
+    "@/assets/app-assets/css/themes/semi-dark-layout.css",
+    "@/assets/app-assets/css/colors.css",
+    "@/assets/app-assets/css/components.css",
+    "@/assets/app-assets/css/themes/bordered-layout.css",
     // END: Theme CSS
 
+
+
     // BEGIN: Page CSS
-    "@assets/app-assets/css/core/menu/menu-types/vertical-menu.css",
-    "@assets/app-assets/css/pages/dashboard-ecommerce.css",
-    "@assets/app-assets/css/pages/ui-feather.css",
-    "@assets/app-assets/css/plugins/charts/chart-apex.css",
-    "@assets/app-assets/css/plugins/extensions/ext-component-toastr.css",
-    // END: Page CSS
+    "@/assets/app-assets/css/core/menu/menu-types/vertical-menu.css",
+    "@/assets/app-assets/css/pages/dashboard-ecommerce.css",
+    "@/assets/app-assets/css/pages/ui-feather.css",
+    "@/assets/app-assets/css/plugins/charts/chart-apex.css",
+    "@/assets/app-assets/css/plugins/extensions/ext-component-toastr.css",
+    "@/assets/app-assets/css/plugins/forms/form-validation.css",
+    "@/assets/app-assets/css/pages/page-auth.css",
+    // END: Page CSS //
 
     // BEGIN: Custom CSS
     "@/assets/assets/css/style.css",
@@ -111,12 +124,8 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     "~plugins/mixins/test.js",
-    // { src: "~plugins/jquery.js", mode: "client" },
-    // { src: "~plugins/feather-file.js", mode: "client" },
-    { src: "~plugins/feather.js", mode: "client" },
-    // { src: "~plugins/jquery.js", mode: "client" },
-    // { src: "~plugins/ui-feather.js", mode: "client" },
-    // "~plugins/jquery.js",
+    { src: "~plugins/apexCharts.js", ssr: false },
+    { src: "~plugins/js/feather.js", ssr: false },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -142,5 +151,8 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    vendor: [
+      'vue-apexchart'
+    ]
   }
 }

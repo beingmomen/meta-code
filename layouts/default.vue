@@ -18,7 +18,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {};
+  },
+  beforeMount() {},
+  created() {},
+};
 </script>
 
 <style lang="scss" scoped>
