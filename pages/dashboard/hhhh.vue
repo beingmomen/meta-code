@@ -1,5 +1,5 @@
 <template>
-  <div class="app-content content">momen admins</div>
+  <div>moemn</div>
 </template>
 
 <script>

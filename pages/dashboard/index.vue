@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app-content content">
     <!-- Button trigger modal -->
     <button
       type="button"
