@@ -1,8 +1,5 @@
 <template>
-  <div class="d-flex justify-content-center align-items-center flex-column">
-    <h2 class="mb-5">META CODE</h2>
-    <NuxtLogo />
-  </div>
+  <Nuxt />
 </template>
 
 <script>

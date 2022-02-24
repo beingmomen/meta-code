@@ -1,7 +1,5 @@
 <template>
-  <div class="blank-page">
-    <Nuxt />
-  </div>
+  <Nuxt />
 </template>
 
 <script>

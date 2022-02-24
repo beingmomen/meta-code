@@ -1,11 +1,16 @@
 <template>
-  <div class="app-content content"></div>
+  <div class="d-flex justify-content-center align-items-center flex-column">
+    <h2 class="mb-5">META CODE 2</h2>
+    <NuxtLogo />
+  </div>
 </template>
 
 <script>
 export default {
   name: "IndexPage",
-  layout: "landing",
+  layout(context) {
+    return "landing";
+  },
   data() {
     return {};
   },

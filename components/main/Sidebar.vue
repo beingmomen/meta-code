@@ -8,7 +8,7 @@
         <li class="nav-item mr-auto">
           <nuxt-link to="/" class="navbar-brand">
             <span class="brand-logo">
-              <img src="/images/code.svg" alt="logo" />
+              <img src="/images/nuxt.svg" alt="logo" />
             </span>
             <h2 class="brand-text">Meta Code</h2>
           </nuxt-link>
