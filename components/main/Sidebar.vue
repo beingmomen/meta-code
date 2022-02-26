@@ -1,6 +1,6 @@
 <template>
   <div
-    class="main-menu menu-fixed menu-light menu-accordion menu-shadow"
+    class="main-menu menu-fixed menu-light menu-accordion menu-shadow expanded"
     data-scroll-to-active="true"
   >
     <div class="navbar-header">
@@ -10,7 +10,7 @@
             <span class="brand-logo">
               <img src="/images/nuxt.svg" alt="logo" />
             </span>
-            <h2 class="brand-text">Meta Code</h2>
+            <h2 class="brand-text">الباشا خان</h2>
           </nuxt-link>
         </li>
       </ul>
@@ -22,24 +22,27 @@
         id="main-menu-navigation"
         data-menu="menu-navigation"
       >
-        <li class="nav-item">
+        <li
+          class="nav-item"
+          :class="$route.path == '/dashboard' ? 'active' : ''"
+        >
           <nuxt-link to="/dashboard" class="d-flex align-items-center">
             <airplay-icon size="1.5x" class="custom-class"></airplay-icon>
             <span class="menu-title text-truncate" data-i18n="Dashboards"
-              >Dashboards</span
+              >لوحة التحكم</span
             >
           </nuxt-link>
         </li>
 
         <li class="navigation-header">
-          <span data-i18n="Apps &amp; Pages">Apps &amp; Pages</span
+          <span data-i18n="Apps &amp; Pages">الصفحات</span
           ><i data-feather="more-horizontal"></i>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" :class="$route.path == '/admins' ? 'active' : ''">
           <nuxt-link to="/admins" class="d-flex align-items-center">
-            <user-icon size="1.5x" class="custom-class"></user-icon>
+            <user-check-icon size="1.5x" class="custom-class"></user-check-icon>
             <span class="menu-title text-truncate" data-i18n="Dashboards"
-              >Admins</span
+              >المسئوليين</span
             >
           </nuxt-link>
         </li>
@@ -49,12 +52,13 @@
 </template>
 
 <script>
-import { AirplayIcon, UserIcon } from "vue-feather-icons";
+import { AirplayIcon, UserIcon, UserCheckIcon } from "vue-feather-icons";
 
 export default {
   components: {
     AirplayIcon,
     UserIcon,
+    UserCheckIcon,
   },
 };
 </script>

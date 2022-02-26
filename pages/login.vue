@@ -12,11 +12,7 @@
                 <!-- Login v1 -->
                 <div class="card mb-0">
                   <div class="card-body">
-                    <nuxt-link
-                      @click.native="prevent($event)"
-                      to=""
-                      class="nav-link brand-logo"
-                    >
+                    <nuxt-link to="" class="nav-link brand-logo">
                       <img
                         class="logo-icon"
                         src="/images/nuxt.svg"
@@ -32,7 +28,7 @@
                       Please sign-in to your account and start the adventure
                     </p>
 
-                    <form class="auth-login-form mt-2">
+                    <form @submit.prevent="login" class="auth-login-form mt-2">
                       <div class="form-group">
                         <label for="login-email" class="form-label"
                           >Email</label
@@ -40,12 +36,11 @@
                         <input
                           type="text"
                           class="form-control"
-                          id="login-email"
-                          name="login-email"
                           placeholder="john@example.com"
                           aria-describedby="login-email"
                           tabindex="1"
                           autofocus
+                          v-model="email"
                         />
                       </div>
 
@@ -65,11 +60,10 @@
                           <input
                             type="password"
                             class="form-control form-control-merge"
-                            id="login-password"
-                            name="login-password"
                             tabindex="2"
-                            placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                            placeholder="............"
                             aria-describedby="login-password"
+                            v-model="password"
                           />
                           <div class="input-group-append">
                             <span class="input-group-text cursor-pointer">
@@ -81,20 +75,10 @@
                           </div>
                         </div>
                       </div>
-                      <div class="form-group">
-                        <div class="custom-control custom-checkbox">
-                          <input
-                            class="custom-control-input"
-                            type="checkbox"
-                            id="remember-me"
-                            tabindex="3"
-                          />
-                          <label class="custom-control-label" for="remember-me">
-                            Remember Me
-                          </label>
-                        </div>
-                      </div>
-                      <button class="btn btn-primary btn-block" tabindex="4">
+                      <button
+                        class="btn btn-primary btn-block mt-2"
+                        tabindex="4"
+                      >
                         Sign in
                       </button>
                     </form>
@@ -114,10 +98,23 @@
 import { EyeIcon } from "vue-feather-icons";
 export default {
   layout: "auth",
+  data() {
+    return {
+      email: "admin@admin.com",
+      password: "password",
+    };
+  },
   methods: {
-    prevent(e) {
-      e.preventDefault();
-      console.warn("prevent");
+    login() {
+      let loginData = {
+        email: this.email,
+        password: this.password,
+        returnSecureToken: true,
+      };
+
+      this.$store.dispatch("authLogin", loginData).then(() => {
+        this.$router.push("/dashboard");
+      });
     },
   },
   components: {

@@ -11,9 +11,9 @@
   >
     <div class="navbar-container d-flex content">
       <div class="bookmark-wrapper d-flex align-items-center">
-        <ul class="nav navbar-nav d-xl-none">
-          <li class="nav-item">
-            <nuxt-link to="javascript:void(0);" class="nav-link menu-toggle">
+        <ul class="nav navbar-nav">
+          <li @click="sidebarToggle" class="nav-item">
+            <nuxt-link to="" class="nav-link">
               <menu-icon size="1.5x" class="custom-class"></menu-icon>
             </nuxt-link>
           </li>
@@ -25,7 +25,7 @@
               to=""
               data-toggle="tooltip"
               data-placement="top"
-              title="Email"
+              title="البريد الإلكتروني"
             >
               <mail-icon size="4x" class="custom-class"></mail-icon>
             </nuxt-link>
@@ -36,7 +36,7 @@
               to=""
               data-toggle="tooltip"
               data-placement="top"
-              title="Chat"
+              title="الدردشة"
             >
               <message-square-icon
                 size="4x"
@@ -50,7 +50,7 @@
               to=""
               data-toggle="tooltip"
               data-placement="top"
-              title="Calendar"
+              title="التقويم"
             >
               <calendar-icon size="4x" class="custom-class"></calendar-icon>
             </nuxt-link>
@@ -61,7 +61,7 @@
               to=""
               data-toggle="tooltip"
               data-placement="top"
-              title="Todo"
+              title="المهام"
             >
               <check-square-icon
                 size="4x"
@@ -80,31 +80,31 @@
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false"
-            ><i class="flag-icon flag-icon-us"></i
-            ><span class="selected-language">English</span></nuxt-link
+            ><i class="flag-icon flag-icon-eg"></i
+            ><span class="selected-language">العربية</span></nuxt-link
           >
           <div
             class="dropdown-menu dropdown-menu-right"
             aria-labelledby="dropdown-flag"
           >
             <nuxt-link class="dropdown-item" to data-language="en"
-              ><i class="flag-icon flag-icon-us"></i> English</nuxt-link
+              ><i class="flag-icon flag-icon-us"></i> الإنجليزية</nuxt-link
             ><nuxt-link class="dropdown-item" to data-language="fr"
-              ><i class="flag-icon flag-icon-fr"></i> French</nuxt-link
+              ><i class="flag-icon flag-icon-eg"></i> العربية</nuxt-link
             >
           </div>
         </li>
         <!-- v-if="isDark" -->
-        <li @click="ToggleSiteMode" class="nav-item d-none d-lg-block">
+        <li class="nav-item d-none d-lg-block">
           <nuxt-link to="" class="nav-link nav-link-style">
             <moon-icon size="4x" class="custom-class"></moon-icon>
           </nuxt-link>
         </li>
-        <li class="nav-item d-none d-lg-block">
+        <!-- <li class="nav-item d-none d-lg-block">
           <nuxt-link to="" class="nav-link nav-link-style">
             <sun-icon size="4x" class="custom-class"></sun-icon>
           </nuxt-link>
-        </li>
+        </li> -->
         <li class="nav-item dropdown dropdown-cart mr-25">
           <nuxt-link class="nav-link" to="" data-toggle="dropdown">
             <shopping-cart-icon
@@ -113,14 +113,14 @@
             ></shopping-cart-icon>
             <span
               class="badge badge-pill badge-primary badge-up cart-item-count"
-              >6</span
+              >1</span
             ></nuxt-link
           >
           <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
             <li class="dropdown-menu-header">
               <div class="dropdown-header d-flex">
-                <h4 class="notification-title mb-0 mr-auto">My Cart</h4>
-                <div class="badge badge-pill badge-light-primary">4 Items</div>
+                <h4 class="notification-title mb-0 mr-auto">قائمة المشتريات</h4>
+                <div class="badge badge-pill badge-light-primary">1 العدد</div>
               </div>
             </li>
             <li class="scrollable-container media-list">
@@ -152,11 +152,11 @@
             </li>
             <li class="dropdown-menu-footer">
               <div class="d-flex justify-content-between mb-1">
-                <h6 class="font-weight-bolder mb-0">Total:</h6>
+                <h6 class="font-weight-bolder mb-0">المجموع:</h6>
                 <h6 class="text-primary font-weight-bolder mb-0">$10,999.00</h6>
               </div>
               <nuxt-link class="btn btn-primary btn-block" to=""
-                >Checkout</nuxt-link
+                >قم بالمراجعة</nuxt-link
               >
             </li>
           </ul>
@@ -165,14 +165,14 @@
           <nuxt-link class="nav-link" to="" data-toggle="dropdown">
             <bell-icon size="4x" class="custom-class"></bell-icon>
             <span class="badge badge-pill badge-danger badge-up"
-              >5</span
+              >1</span
             ></nuxt-link
           >
           <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
             <li class="dropdown-menu-header">
               <div class="dropdown-header d-flex">
-                <h4 class="notification-title mb-0 mr-auto">Notifications</h4>
-                <div class="badge badge-pill badge-light-primary">6 New</div>
+                <h4 class="notification-title mb-0 mr-auto">الإشعارات</h4>
+                <div class="badge badge-pill badge-light-primary">1 جديد</div>
               </div>
             </li>
             <li class="scrollable-container media-list">
@@ -203,23 +203,23 @@
             </li>
             <li class="dropdown-menu-footer">
               <a class="btn btn-primary btn-block" href="javascript:void(0)"
-                >Read all notifications</a
+                >قم بقراءة جميع الإشعارات</a
               >
             </li>
           </ul>
         </li>
         <li class="nav-item dropdown dropdown-user">
-          <a
+          <nuxt-link
+            to=""
             class="nav-link dropdown-toggle dropdown-user-link"
             id="dropdown-user"
-            href="javascript:void(0);"
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false"
           >
             <div class="user-nav d-sm-flex d-none">
-              <span class="user-name font-weight-bolder">John Doe</span
-              ><span class="user-status">Admin</span>
+              <span class="user-name font-weight-bolder">الباشا خان</span
+              ><span class="user-status">مسئول</span>
             </div>
             <span class="avatar"
               ><img
@@ -229,30 +229,56 @@
                 height="40"
                 width="40" /><span class="avatar-status-online"></span
             ></span>
-          </a>
+          </nuxt-link>
           <div
             class="dropdown-menu dropdown-menu-right"
             aria-labelledby="dropdown-user"
           >
-            <a class="dropdown-item" href="page-profile.html"
-              ><i class="mr-50" data-feather="user"></i> Profile</a
-            ><a class="dropdown-item" href="app-email.html"
-              ><i class="mr-50" data-feather="mail"></i> Inbox</a
-            ><a class="dropdown-item" href="app-todo.html"
-              ><i class="mr-50" data-feather="check-square"></i> Task</a
-            ><a class="dropdown-item" href="app-chat.html"
-              ><i class="mr-50" data-feather="message-square"></i> Chats</a
+            <nuxt-link class="dropdown-item" to="">
+              <user-icon size="1.5x" class="custom-class"></user-icon>
+              Profile</nuxt-link
             >
+            <nuxt-link class="dropdown-item" to="">
+              <mail-icon size="1.5x" class="custom-class"></mail-icon>
+              Inbox
+            </nuxt-link>
+            <nuxt-link class="dropdown-item" to="">
+              <check-square-icon
+                size="1.5x"
+                class="custom-class"
+              ></check-square-icon>
+              Task
+            </nuxt-link>
+            <nuxt-link class="dropdown-item" to="">
+              <message-square-icon
+                size="1.5x"
+                class="custom-class"
+              ></message-square-icon>
+              Chats
+            </nuxt-link>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="page-account-settings.html"
-              ><i class="mr-50" data-feather="settings"></i> Settings</a
-            ><a class="dropdown-item" href="page-pricing.html"
-              ><i class="mr-50" data-feather="credit-card"></i> Pricing</a
-            ><a class="dropdown-item" href="page-faq.html"
-              ><i class="mr-50" data-feather="help-circle"></i> FAQ</a
-            ><a class="dropdown-item" href="page-auth-login-v2.html"
-              ><i class="mr-50" data-feather="power"></i> Logout</a
-            >
+            <nuxt-link class="dropdown-item" to="">
+              <settings-icon size="1.5x" class="custom-class"></settings-icon>
+              Settings
+            </nuxt-link>
+            <nuxt-link class="dropdown-item" to="">
+              <credit-card-icon
+                size="1.5x"
+                class="custom-class"
+              ></credit-card-icon>
+              Pricing
+            </nuxt-link>
+            <nuxt-link class="dropdown-item" to="">
+              <help-circle-icon
+                size="1.5x"
+                class="custom-class"
+              ></help-circle-icon>
+              FAQ
+            </nuxt-link>
+            <nuxt-link class="dropdown-item" to="">
+              <power-icon size="1.5x" class="custom-class"></power-icon>
+              Logout
+            </nuxt-link>
           </div>
         </li>
       </ul>
@@ -272,24 +298,33 @@ import {
   ShoppingCartIcon,
   XIcon,
   BellIcon,
+  UserIcon,
+  SettingsIcon,
+  CreditCardIcon,
+  HelpCircleIcon,
+  PowerIcon,
 } from "vue-feather-icons";
 
 export default {
+  props: ["mode"],
   data() {
     return {
-      // isDark: localStorage.getItem("isDark"),
+      darkMode: "",
+      menuCollapsed: "menu-collapsed",
+      menuExpanded: "menu-expanded",
     };
   },
   methods: {
-    ToggleSiteMode() {
-      if (this.isDark) {
-        localStorage.setItem("isDark", false);
-      } else {
-        localStorage.setItem("isDark", true);
-      }
+    sidebarToggle() {
+      document.body.classList.toggle("menu-collapsed");
+      document.querySelector(".main-menu").classList.toggle("expanded");
+    },
+    toggleMode() {
+      console.warn("toggleMode");
     },
   },
   components: {
+    UserIcon,
     MenuIcon,
     MailIcon,
     MessageSquareIcon,
@@ -300,6 +335,10 @@ export default {
     ShoppingCartIcon,
     XIcon,
     BellIcon,
+    SettingsIcon,
+    CreditCardIcon,
+    HelpCircleIcon,
+    PowerIcon,
   },
 };
 </script>
